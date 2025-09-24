@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kisan Gold Poplar Nursery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; } /* Smooth scroll */
+    body { font-family: 'Montserrat', sans-serif; line-height: 1.6; background-color: #e6f2e6; color: #2f4f2f; }
+
+    /* Header with logo */
+    header { 
+      background: linear-gradient(120deg, #7cc57f, #4a7c40); 
+      padding: 20px 20px; 
+      color: #fff; 
+      border-radius: 10px; 
+      margin: 20px 0; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      flex-wrap: wrap;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    header:hover { 
+      transform: scale(1.02); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+    }
+    header a { display: flex; align-items: center; text-decoration: none; color: #fff; }
+    header img { width: 80px; height: 80px; object-fit: contain; margin-right: 15px; transition: transform 0.3s ease; }
+    header img:hover { transform: rotate(10deg) scale(1.1); }
+    header .header-text { text-align: center; }
+    header h1 { font-size: 3.0rem; margin-bottom: 5px; }
+    header p { font-size: 1.0rem; font-weight: 600; }
+
+    /* Navigation */
+    nav { 
+      background: #4a7c40; 
+      padding: 15px 20px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+      position: sticky; top: 0; 
+      text-align: center; 
+      z-index: 100;
+    }
+    nav a { margin: 0 15px; text-decoration: none; color: #d9f0d9; font-weight: 600; transition: color 0.3s ease; }
+    nav a:hover { color: #a3d49b; }
+
+    /* Sections */
+    section { padding: 40px 20px; max-width: 1200px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #355e35; }
+    .text-center { text-align: center; }
+
+    /* Services and crops */
+    .services, .crops { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    .service, .crop-card {
+      background: #f0f9f0; 
+      padding: 25px; 
+      border-radius: 15px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+      width: 100%; 
+      max-width: 350px; 
+      transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.8s ease, translateY 0.5s ease;
+      color: #2f4f2f;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .service:hover, .crop-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15); 
+    }
+    .service h3, .crop-card h3 { color: #4a7c40; margin-bottom: 15px; }
+    .service img, .crop-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-top: 15px; }
+
+    /* Active animation */
+    .visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+    #map { width: 100%; height: 400px; border-radius: 15px; margin-top: 20px; }
+    footer { background-color: #4a7c40; color: #d9f0d9; padding: 30px 20px; text-align: center; margin-top: 40px; }
+
+    a { color: #355e35; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 1rem; }
+    }
+    @media (max-width: 768px) {
+      header { flex-direction: column; }
+      header img { margin-bottom: 10px; margin-right: 0; }
+      h2 { font-size: 1.6rem; margin-bottom: 30px; }
+      .service, .crop-card { max-width: 90%; padding: 20px; }
+      .service img, .crop-card img { height: auto; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Header -->
+  <header>
+    <a href="#top">
+      <img src="logo1.png" alt="Kisan Gold Logo">
+      <div class="header-text">
+        <h1>Kisan Gold Poplar Nursery</h1>
+        <p>Providing High-Yield Poplar Varieties (W109, W110, W111, W112) for Farmers<br> Fast-Growing | High Market Value | Sustainable Farming</p>
+      </div>
+    </a>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#crops">Our Crops</a>
+ <!--   <a href="#services">Farm Services</a>    -->
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Kisan Gold Poplar Nursery</h2>
+    <p class="text-center" style="max-width: 900px; margin: auto; font-size: 1.1rem;">
+      Located on two fertile acres, Green Acres Farm is dedicated to sustainable and organic farming practices.
+      We believe in nurturing the earth to produce fresh, healthy, and natural produce for our community. 
+      With a focus on biodiversity, soil health, and water conservation, we strive to maintain the perfect balance between nature and agriculture.
+    </p>
+  </section>
+
+  <!-- Poplar Crop Section -->
+  <section id="crops">
+    <h2>🌳 Poplar Tree Varieties</h2>
+    <div class="crops">
+
+      <div class="crop-card">
+        <h3>Poplar Variety W109</h3>
+        <p>W109 is one of the most popular and high-performing poplar clones in India. It is known for its fast growth, straight stem, and high timber yield, making it a farmer’s favorite.</p>
+        <img src="WhatsApp Image 2025-09-23 at 9.16.13 PM (1).jpeg" alt="Poplar W109">
+      </div>
+
+      <div class="crop-card">
+        <h3>Poplar Variety W110</h3>
+        <p>W110 is another premium clone with a reputation for uniform growth and good disease tolerance. It balances fast maturity with quality timber production.</p>
+        <img src="WhatsApp Image 2025-09-23 at 9.16.13 PM.jpeg" alt="Poplar W110">
+      </div>
+
+      <div class="crop-card">
+        <h3>Poplar Variety W111</h3>
+        <p>W111 is a newer poplar variety, preferred by some farmers for its quick initial growth and good adaptability in irrigated conditions.</p>
+        <img src="WhatsApp Image 2025-09-23 at 9.16.14 PM (1).jpeg" alt="Poplar W111">
+      </div>
+
+      <div class="crop-card">
+        <h3>Poplar Variety W112</h3>
+        <p>W112 is also a fast-growing clone but with limited trial data compared to W109/W110. It is used by farmers who experiment with new varieties for potentially higher returns.</p>
+        <img src="WhatsApp Image 2025-09-23 at 9.16.14 PM (2).jpeg" alt="Poplar W112">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Farm Services Section -->
+  
+
+  <!-- Location Section -->
+  <section id="location">
+    <h2>Find Us Here</h2>
+    <p class="text-center" style="max-width: 900px; margin: auto; font-size: 1.1rem;">
+      Visit Green Acres Farm at our beautiful 2-acre location, nestled in the countryside with plenty of room for sustainable agriculture.
+    </p>
+    <div id="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3455.1444752925345!2d77.83794307555225!3d30.004007674944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDAwJzE0LjQiTiA3N8KwNTAnMjUuOSJF!5e0!3m2!1sen!2sin!4v1758692717735!5m2!1sen!2sin" 
+        width="100%" height="400" style="border:0; border-radius: 15px;" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p class="text-center" style="font-size: 1.1rem;">
+      📧 <a href="mailto:kisangoldkg@gmail.com">kisangoldkg@gmail.com</a> <br>
+      📞 +91 82734 78690 <br>
+      📞 +91 63964 62985 <br>
+      🌐 <a href="https://www.greenacresfarm.com" target="_blank">www.greenacresfarm.com</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Green Acres Farm. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll animation script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service, .crop-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
